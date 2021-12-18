@@ -1,0 +1,46 @@
+@use "variables" as v;
+@use "breakpoints" as *;
+
+.hero {
+  .row {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    @include desktop {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+    }
+    .col:first-child {
+      img {
+        width: 100%;
+      }
+    }
+    .col:last-child {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: flex-start;
+      align-items: center;
+      @include desktop {
+        order: -1;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        color: v.$DarkBlue;
+        @include desktop {
+          text-align: left;
+        }
+      }
+      p {
+        text-align: center;
+        color: v.$DarkGrayishBlue;
+        @include desktop {
+          text-align: left;
+        }
+      }
+    }
+  }
+}

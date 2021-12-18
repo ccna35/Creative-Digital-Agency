@@ -1,0 +1,9 @@
+@use "variables" as v;
+
+.btn {
+  padding: 10px 25px;
+  background-color: v.$BrightRed;
+  border-radius: 50px;
+  color: v.$VaryLightGray;
+  cursor: pointer;
+}

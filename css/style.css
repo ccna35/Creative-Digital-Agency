@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+nav {
+  padding: 20px 0;
+  margin-bottom: 2rem;
+}
+nav .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .navbar .brand {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+nav .navbar .brand span {
+  color: #333;
+}
+nav .navbar .burger-menu {
+  width: 1.5rem;
+  height: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+nav .navbar .burger-menu span {
+  width: 100%;
+  height: 4px;
+  background-color: #333;
+  border-radius: 5px;
+}
+@media (min-width: 800px) {
+  nav .navbar .burger-menu {
+    display: none;
+  }
+}
+nav .navbar .menu {
+  display: none;
+}
+@media (min-width: 800px) {
+  nav .navbar .menu {
+    display: block;
+  }
+}
+nav .navbar .menu li {
+  padding: 10px 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+nav .navbar .btn {
+  padding: 10px 25px;
+  background-color: #f25f3a;
+  border-radius: 50px;
+  color: #fafafa;
+  cursor: pointer;
+}
+nav .navbar .nav__btn {
+  display: none;
+}
+@media (min-width: 800px) {
+  nav .navbar .nav__btn {
+    display: block;
+  }
+}
+
+.hero .row {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+}
+@media (min-width: 800px) {
+  .hero .row {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+  }
+}
+.hero .row .col:first-child img {
+  width: 100%;
+}
+.hero .row .col:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media (min-width: 800px) {
+  .hero .row .col:last-child {
+    order: -1;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+.hero .row .col:last-child h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #242d52;
+}
+@media (min-width: 800px) {
+  .hero .row .col:last-child h2 {
+    text-align: left;
+  }
+}
+.hero .row .col:last-child p {
+  text-align: center;
+  color: #9095a7;
+}
+@media (min-width: 800px) {
+  .hero .row .col:last-child p {
+    text-align: left;
+  }
+}
+
+.btn {
+  padding: 10px 25px;
+  background-color: #f25f3a;
+  border-radius: 50px;
+  color: #fafafa;
+  cursor: pointer;
+}
+
+body {
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=style.css.map */
