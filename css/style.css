@@ -357,19 +357,56 @@ nav .navbar .nav__btn {
 }
 
 footer {
-  background: #242d52;
-}
-footer ul {
+  background: #1d1e25;
   color: white;
 }
-footer .row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+footer .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
 }
-footer .row .col:nth-child(1) {
-  order: 1;
+footer .grid .item {
+  align-self: center;
+}
+footer .grid .email-box {
+  grid-column: 1/span 2;
+}
+footer .grid .email-box form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+footer .grid .email-box form input[type=text] {
+  padding: 10px 26px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+}
+footer .grid .footer-menu-left ul li:not(:last-child), footer .grid .footer-menu-right ul li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+footer .grid .socials {
+  grid-column: 1/span 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+footer .grid .socials img {
+  width: 30px;
+}
+footer .grid .footer__logo {
+  grid-column: 1/span 2;
+  text-align: center;
+}
+footer .grid .copyright {
+  text-align: center;
+  color: #9095a7;
+  grid-column: 1/span 2;
 }
 footer .btn {
   border: none;

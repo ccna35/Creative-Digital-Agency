@@ -3,14 +3,56 @@
 @use "../utilities/breakpoints" as *;
 
 footer {
-  background: v.$DarkBlue;
-  ul {
-    color: white;
-  }
-  .row {
-    @include flex;
-    .col:nth-child(1) {
-      order: 1;
+  background: v.$VeryDarkBlue;
+  color: white;
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    // row-gap: 1rem;
+    .item {
+      align-self: center;
+    }
+    .email-box {
+      grid-column: 1 / span 2;
+      form {
+        width: 100%;
+        @include flex(space-between, center, row);
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        input[type="text"] {
+          padding: 10px 26px;
+          border-radius: 50px;
+          border: none;
+          outline: none;
+        }
+      }
+    }
+    .footer-menu-left {
+      ul {
+        li:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    .footer-menu-right {
+      @extend .footer-menu-left;
+    }
+    .socials {
+      grid-column: 1 / span 2;
+      @include flex(space-between, center, row);
+      img {
+        width: 30px;
+      }
+    }
+    .footer__logo {
+      grid-column: 1 / span 2;
+      text-align: center;
+    }
+    .copyright {
+      text-align: center;
+      color: v.$DarkGrayishBlue;
+      grid-column: 1 / span 2;
     }
   }
   .btn {
