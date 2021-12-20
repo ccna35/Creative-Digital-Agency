@@ -1,0 +1,16 @@
+@use "../utilities/variables" as v;
+
+@mixin transition($transition...) {
+  transition: $transition;
+}
+
+@mixin boxShadow {
+  box-shadow: 0px 9px 9px -6px v.$PaleRed;
+}
+
+@mixin flex($jc: center, $ai: center, $dir: column) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-direction: $dir;
+}

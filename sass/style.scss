@@ -1,15 +1,11 @@
-@use "components/resets";
-@use "components/variables" as v;
+@use "./utilities/global_rules";
+@use "./utilities/resets";
+@use "./utilities/variables" as v;
 @use "components/navbar";
 @use "components/hero";
 @use "./components/buttons";
-
-body {
-  font-family: "Be Vietnam Pro", sans-serif;
-}
-
-.container {
-  max-width: v.$max-width;
-  padding: 0 20px;
-  margin: 0 auto;
-}
+@use "./components/features";
+@use "./components/reviews";
+@use "./utilities/typoghraphy";
+@use "./components/cta";
+@use "./components/footer";

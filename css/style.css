@@ -1,3 +1,14 @@
+body {
+  font-family: "Be Vietnam Pro", sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -40,7 +51,7 @@ nav .navbar .burger-menu span {
   background-color: #333;
   border-radius: 5px;
 }
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   nav .navbar .burger-menu {
     display: none;
   }
@@ -48,54 +59,61 @@ nav .navbar .burger-menu span {
 nav .navbar .menu {
   display: none;
 }
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   nav .navbar .menu {
     display: block;
   }
 }
 nav .navbar .menu li {
-  padding: 10px 5px;
   display: inline-block;
   cursor: pointer;
+  transition: color 0.5s;
 }
-nav .navbar .btn {
-  padding: 10px 25px;
-  background-color: #f25f3a;
-  border-radius: 50px;
-  color: #fafafa;
-  cursor: pointer;
+nav .navbar .menu li:hover {
+  color: #9095a7;
+}
+nav .navbar .menu li:not(:last-child) {
+  margin-right: 2rem;
 }
 nav .navbar .nav__btn {
   display: none;
 }
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   nav .navbar .nav__btn {
     display: block;
   }
 }
 
-.hero .row {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, 1fr);
+.hero {
+  margin-bottom: 4rem;
+  position: relative;
 }
-@media (min-width: 800px) {
+.hero .row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (min-width: 900px) {
   .hero .row {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
+    flex-direction: row;
   }
+}
+.hero .row .col:first-child {
+  flex-basis: 43%;
 }
 .hero .row .col:first-child img {
   width: 100%;
 }
 .hero .row .col:last-child {
+  flex-basis: 46%;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
   justify-content: flex-start;
   align-items: center;
 }
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .hero .row .col:last-child {
     order: -1;
     justify-content: center;
@@ -107,7 +125,7 @@ nav .navbar .nav__btn {
   text-align: center;
   color: #242d52;
 }
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .hero .row .col:last-child h2 {
     text-align: left;
   }
@@ -116,7 +134,7 @@ nav .navbar .nav__btn {
   text-align: center;
   color: #9095a7;
 }
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .hero .row .col:last-child p {
     text-align: left;
   }
@@ -127,17 +145,234 @@ nav .navbar .nav__btn {
   background-color: #f25f3a;
   border-radius: 50px;
   color: #fafafa;
+  font-weight: 500;
   cursor: pointer;
+  transition: box-shadow 0.5s, background-color 0.5s;
+}
+.btn:hover {
+  background-color: #fb8f73;
+  box-shadow: 0px 9px 9px -6px #fb8f73;
 }
 
-body {
-  font-family: "Be Vietnam Pro", sans-serif;
+.features {
+  margin-bottom: 4rem;
+  overflow-x: hidden;
+}
+.features .row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+@media (min-width: 900px) {
+  .features .row {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+.features .col:first-child {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+@media (min-width: 900px) {
+  .features .col:first-child {
+    text-align: left;
+  }
+}
+.features .col:first-child h2 {
+  font-size: 2rem;
+  color: #242d52;
+  margin-bottom: 1rem;
+}
+.features .col:first-child p {
+  color: #9095a7;
+}
+.features .col:last-child h2 {
+  width: 110%;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  background-color: #ffefeb;
+  padding: 7px 0;
+  border-radius: 50px 0 0 50px;
+  color: #242d52;
+}
+@media (min-width: 900px) {
+  .features .col:last-child h2 {
+    width: 100%;
+    background-color: transparent;
+  }
+}
+.features .col:last-child h2 span {
+  padding: 7px 23px;
+  background-color: #f25f3a;
+  color: white;
+  border-radius: 50px;
+  margin-right: 0.8rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.features .col:last-child p {
+  color: #9095a7;
+}
+.features .col:last-child .feature {
+  margin-bottom: 3rem;
 }
 
-.container {
-  max-width: 1000px;
-  padding: 0 20px;
-  margin: 0 auto;
+.reviews {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.reviews .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 100%;
+}
+.reviews h2 {
+  margin-bottom: 4rem;
+}
+.reviews .reviews__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  position: relative;
+  padding: 10px;
+  min-height: 20rem;
+  overflow-x: hidden;
+}
+@media (min-width: 900px) {
+  .reviews .reviews__container {
+    overflow-x: scroll;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+.reviews .review {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  top: 0;
+  display: none;
+}
+.reviews .review > * {
+  margin-bottom: 2rem;
+}
+@media (min-width: 900px) {
+  .reviews .review {
+    display: block;
+    min-width: 40%;
+    position: relative;
+  }
+}
+.reviews .review.active {
+  display: block;
+}
+.reviews .review img {
+  width: 20%;
+}
+.reviews .review .name {
+  color: #242d52;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+@media (min-width: 900px) {
+  .reviews .btn {
+    margin-top: 5rem;
+  }
+}
+.reviews .circles {
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+}
+@media (min-width: 900px) {
+  .reviews .circles {
+    display: none;
+  }
+}
+.reviews .circles span {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #f25f3a;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.5s;
+}
+.reviews .circles span:hover, .reviews .circles span.active {
+  background-color: #f25f3a;
+}
+.reviews .circles span:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.text {
+  color: #9095a7;
+}
+
+.subHeading {
+  font-size: 2rem;
+  color: #242d52;
+}
+
+.CTA {
+  padding: 5rem 0;
+  background-image: url("../images/bg-tablet-pattern.svg");
+  background-color: #f25f3a;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: -100%;
+  background-blend-mode: soft-light;
+}
+.CTA h2 {
+  color: white;
+  font-weight: 500;
+}
+.CTA .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media (min-width: 900px) {
+  .CTA .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+.CTA .btn {
+  background-color: white;
+  color: #f25f3a;
+}
+
+footer {
+  background: #242d52;
+}
+footer ul {
+  color: white;
+}
+footer .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer .row .col:nth-child(1) {
+  order: 1;
+}
+footer .btn {
+  border: none;
 }
 
 /*# sourceMappingURL=style.css.map */

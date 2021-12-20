@@ -1,0 +1,66 @@
+@use "../utilities/variables" as v;
+@use "../utilities/breakpoints" as *;
+
+.features {
+  margin-bottom: 4rem;
+  overflow-x: hidden;
+  .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2rem;
+    @include desktop {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+  .col:first-child {
+    text-align: center;
+    margin-bottom: 4rem;
+    @include desktop {
+      text-align: left;
+    }
+    h2 {
+      font-size: 2rem;
+      color: v.$DarkBlue;
+      margin-bottom: 1rem;
+    }
+    p {
+      color: v.$DarkGrayishBlue;
+    }
+  }
+
+  .col:last-child {
+    h2 {
+      width: 110%;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      background-color: v.$VeryPaleRed;
+      padding: 7px 0;
+      border-radius: 50px 0 0 50px;
+      color: v.$DarkBlue;
+
+      @include desktop {
+        width: 100%;
+        background-color: transparent;
+      }
+      span {
+        padding: 7px 23px;
+        background-color: v.$BrightRed;
+        color: white;
+        border-radius: 50px;
+        margin-right: 0.8rem;
+        font-size: 1rem;
+        font-weight: v.$light;
+      }
+    }
+    p {
+      color: v.$DarkGrayishBlue;
+    }
+    .feature {
+      margin-bottom: 3rem;
+    }
+  }
+}

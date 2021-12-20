@@ -1,0 +1,29 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as *;
+@use "../utilities/breakpoints" as *;
+
+.CTA {
+  //   text-align: center;
+  padding: 5rem 0;
+  background-image: url("../images/bg-tablet-pattern.svg");
+  background-color: v.$BrightRed;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: -100%;
+  background-blend-mode: soft-light;
+  h2 {
+    color: white;
+    font-weight: v.$semiBold;
+  }
+  .row {
+    @include flex;
+    gap: 2rem;
+    @include desktop {
+      @include flex(space-between, center, row);
+    }
+  }
+  .btn {
+    background-color: white;
+    color: v.$BrightRed;
+  }
+}

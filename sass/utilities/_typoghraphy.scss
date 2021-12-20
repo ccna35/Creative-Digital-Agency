@@ -1,0 +1,10 @@
+@use "./variables" as v;
+
+.text {
+  color: v.$DarkGrayishBlue;
+}
+
+.subHeading {
+  font-size: 2rem;
+  color: v.$DarkBlue;
+}

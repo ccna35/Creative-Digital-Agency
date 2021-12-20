@@ -1,0 +1,19 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as *;
+@use "../utilities/breakpoints" as *;
+
+footer {
+  background: v.$DarkBlue;
+  ul {
+    color: white;
+  }
+  .row {
+    @include flex;
+    .col:nth-child(1) {
+      order: 1;
+    }
+  }
+  .btn {
+    border: none;
+  }
+}

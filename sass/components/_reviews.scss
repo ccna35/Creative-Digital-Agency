@@ -1,0 +1,85 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as *;
+@use "../utilities/breakpoints" as *;
+
+.reviews {
+  text-align: center;
+  margin-bottom: 4rem;
+  .container {
+    @include flex;
+    max-width: 100%;
+  }
+  h2 {
+    margin-bottom: 4rem;
+  }
+  .reviews__container {
+    @include flex;
+    gap: 2rem;
+    width: 100%;
+    position: relative;
+    padding: 10px;
+    min-height: 20rem;
+    overflow-x: hidden;
+    @include desktop {
+      overflow-x: scroll;
+      @include flex(space-between, center, row);
+    }
+  }
+  .review {
+    @include flex;
+    gap: 2rem;
+    position: relative;
+    top: 0;
+    display: none;
+    & > * {
+      margin-bottom: 2rem;
+    }
+    @include desktop {
+      display: block;
+      min-width: 40%;
+      position: relative;
+    }
+    &.active {
+      display: block;
+    }
+    img {
+      width: 20%;
+    }
+    .name {
+      color: v.$DarkBlue;
+      font-weight: v.$bold;
+      font-size: 1.2rem;
+    }
+    .text {
+      //   margin-bottom: 4rem;
+    }
+  }
+  .btn {
+    @include desktop {
+      margin-top: 5rem;
+    }
+  }
+  .circles {
+    // display: none;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+    @include desktop {
+      display: none;
+    }
+    span {
+      width: 10px;
+      height: 10px;
+      border: 2px solid v.$BrightRed;
+      border-radius: 50%;
+      display: inline-block;
+      @include transition(background-color 0.5s);
+      &:hover,
+      &.active {
+        background-color: v.$BrightRed;
+      }
+    }
+    span:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}

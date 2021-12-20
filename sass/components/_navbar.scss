@@ -1,5 +1,6 @@
-@use "variables" as v;
-@use "breakpoints" as *;
+@use "../utilities/variables" as v;
+@use "../utilities/breakpoints" as *;
+@use "../utilities/mixins" as *;
 
 nav {
   padding: 20px 0;
@@ -49,17 +50,17 @@ nav {
         display: block;
       }
       li {
-        padding: 10px 5px;
+        // padding: 10px 5px;
         display: inline-block;
         cursor: pointer;
+        @include transition(color 0.5s);
+        &:hover {
+          color: v.$DarkGrayishBlue;
+        }
       }
-    }
-    .btn {
-      padding: 10px 25px;
-      background-color: v.$BrightRed;
-      border-radius: 50px;
-      color: v.$VaryLightGray;
-      cursor: pointer;
+      li:not(:last-child) {
+        margin-right: 2rem;
+      }
     }
     .nav__btn {
       display: none;
