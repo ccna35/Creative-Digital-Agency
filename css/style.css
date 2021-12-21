@@ -260,9 +260,10 @@ nav .navbar .nav__btn {
   flex-direction: column;
   gap: 2rem;
   width: 100%;
+  height: 21rem;
   position: relative;
   padding: 10px;
-  overflow-x: hidden;
+  overflow: hidden;
   user-select: none;
 }
 .reviews .reviews__container::-webkit-scrollbar {
@@ -274,6 +275,12 @@ nav .navbar .nav__btn {
     height: 23rem;
   }
 }
+.reviews .reviews__container .slider {
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  height: 100%;
+}
 @media (min-width: 992px) {
   .reviews .reviews__container .slider {
     display: flex;
@@ -281,10 +288,7 @@ nav .navbar .nav__btn {
     align-items: center;
     flex-direction: row;
     width: 100%;
-    height: 100%;
     gap: 2rem;
-    position: absolute;
-    top: 0;
     left: 0;
   }
 }
@@ -293,26 +297,31 @@ nav .navbar .nav__btn {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 2rem;
-  position: relative;
+  position: absolute;
   top: 0;
-  display: none;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 .reviews .review > * {
   margin-bottom: 2rem;
 }
 @media (min-width: 992px) {
   .reviews .review {
+    gap: 2rem;
+    position: relative;
     display: block;
     min-width: 30rem;
     position: relative;
+    opacity: 1;
   }
 }
 .reviews .review.active {
-  display: block;
+  opacity: 1;
 }
 .reviews .review img {
   width: 6rem;
+  pointer-events: none;
 }
 .reviews .review .name {
   color: #242d52;
@@ -326,6 +335,7 @@ nav .navbar .nav__btn {
 }
 .reviews .circles {
   margin-bottom: 4rem;
+  margin-top: 1rem;
 }
 @media (min-width: 992px) {
   .reviews .circles {
@@ -431,6 +441,11 @@ footer .grid .email-box form {
   flex-wrap: wrap;
   gap: 0.5rem;
 }
+@media (min-width: 576px) {
+  footer .grid .email-box form {
+    justify-content: center;
+  }
+}
 footer .grid .email-box form input[type=email] {
   padding: 10px 15px;
   border-radius: 50px;
@@ -467,6 +482,8 @@ footer .grid .footer-menu-left ul li:not(:last-child), footer .grid .footer-menu
 footer .grid .socials {
   grid-column: 1/span 2;
   justify-self: left;
+  width: 100%;
+  justify-content: space-evenly;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -474,9 +491,12 @@ footer .grid .socials {
 }
 @media (min-width: 992px) {
   footer .grid .socials {
-    grid-column: 1/span 1;
-    justify-content: space-evenly;
     align-self: end;
+  }
+}
+@media (min-width: 576px) {
+  footer .grid .socials {
+    grid-column: 1/span 1;
   }
 }
 footer .grid .socials img {
