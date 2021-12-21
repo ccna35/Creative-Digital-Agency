@@ -18,11 +18,27 @@
     width: 100%;
     position: relative;
     padding: 10px;
-    min-height: 20rem;
     overflow-x: hidden;
-    @include desktop {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    // pointer-events: none;
+    user-select: none;
+    @include lg {
       overflow-x: scroll;
-      @include flex(space-between, center, row);
+      height: 23rem;
+      // @include flex(space-between, center, row);
+    }
+    .slider {
+      @include lg {
+        @include flex(space-between, center, row);
+        width: 100%;
+        height: 100%;
+        gap: 2rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
     }
   }
   .review {
@@ -34,36 +50,31 @@
     & > * {
       margin-bottom: 2rem;
     }
-    @include desktop {
+    @include lg {
       display: block;
-      min-width: 40%;
+      min-width: 30rem;
       position: relative;
     }
     &.active {
       display: block;
     }
     img {
-      width: 20%;
+      width: 6rem;
     }
     .name {
       color: v.$DarkBlue;
       font-weight: v.$bold;
       font-size: 1.2rem;
     }
-    .text {
-      //   margin-bottom: 4rem;
-    }
   }
   .btn {
-    @include desktop {
+    @include lg {
       margin-top: 5rem;
     }
   }
   .circles {
-    // display: none;
     margin-bottom: 4rem;
-    margin-top: 2rem;
-    @include desktop {
+    @include lg {
       display: none;
     }
     span {

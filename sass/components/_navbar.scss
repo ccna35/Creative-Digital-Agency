@@ -40,13 +40,13 @@ nav {
         background-color: #333;
         border-radius: 5px;
       }
-      @include desktop {
+      @include lg {
         display: none;
       }
     }
     .menu {
       display: none;
-      @include desktop {
+      @include lg {
         display: block;
       }
       li {
@@ -64,7 +64,7 @@ nav {
     }
     .nav__btn {
       display: none;
-      @include desktop {
+      @include lg {
         display: block;
       }
     }
