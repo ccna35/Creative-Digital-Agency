@@ -29,7 +29,7 @@ footer {
       }
       form {
         width: 100%;
-        @include flex(space-between, center, row);
+        @include flex(center, center, row);
         flex-wrap: wrap;
         gap: 0.5rem;
         @include sm {
@@ -85,10 +85,12 @@ footer {
     }
     .footer__logo {
       grid-column: 1 / span 2;
-      text-align: left;
+      text-align: center;
       @include lg {
         order: -1;
         grid-column: 1 / span 1;
+        align-self: flex-start;
+        text-align: left;
       }
       img {
         @include lg {

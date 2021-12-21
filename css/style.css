@@ -243,7 +243,10 @@ nav .navbar .nav__btn {
 .features .col:first-child p {
   color: #9095a7;
 }
-.features .col:last-child h2 {
+.features .col:last-child .feature {
+  margin-bottom: 3rem;
+}
+.features .col:last-child .feature h2 {
   width: 110%;
   font-size: 1rem;
   background-color: #ffefeb;
@@ -252,43 +255,21 @@ nav .navbar .nav__btn {
   color: #242d52;
 }
 @media (min-width: 992px) {
-  .features .col:last-child h2 {
+  .features .col:last-child .feature h2 {
     width: 100%;
     background-color: transparent;
   }
 }
-.features .col:last-child p:first-child {
-  padding: 3px 23px;
+.features .col:last-child .feature .num {
+  padding: 7px 23px;
   background-color: #f25f3a;
   color: white;
   border-radius: 50px;
   font-size: 1rem;
   font-weight: 400;
 }
-.features .col:last-child p:last-child {
-  color: #9095a7;
-}
-.features .col:last-child .feature {
-  margin-bottom: 3rem;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-  gap: 1rem;
-  align-items: flex-start;
-}
-.features .col:last-child .feature .num {
-  grid-column: 1/span 1;
-  grid-row: 1/span 1;
-  justify-self: flex-end;
-}
-.features .col:last-child .feature h2 {
-  grid-column: 2/span 3;
-  grid-row: 1/span 1;
-  justify-self: flex-end;
-}
 .features .col:last-child .feature .feature__desc {
-  grid-column: 2/span 3;
-  grid-row: 2/span 1;
+  color: #9095a7;
 }
 
 .reviews {
@@ -487,7 +468,7 @@ footer .grid .email-box {
 footer .grid .email-box form {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
@@ -556,12 +537,14 @@ footer .grid .socials img {
 }
 footer .grid .footer__logo {
   grid-column: 1/span 2;
-  text-align: left;
+  text-align: center;
 }
 @media (min-width: 992px) {
   footer .grid .footer__logo {
     order: -1;
     grid-column: 1/span 1;
+    align-self: flex-start;
+    text-align: left;
   }
 }
 @media (min-width: 992px) {
