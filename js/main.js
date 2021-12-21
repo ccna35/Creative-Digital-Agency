@@ -32,7 +32,7 @@ const circles = document.querySelectorAll(".circles span");
 const reviews = document.querySelectorAll(".review");
 
 circles.forEach((circle) => {
-  circle.addEventListener("click", (e) => {
+  circle.addEventListener("touchstart", (e) => {
     reviews.forEach((review) => {
       review.classList.remove("active");
     });
@@ -41,11 +41,5 @@ circles.forEach((circle) => {
         review.classList.add("active");
       }
     });
-  });
-});
-
-reviews.forEach((review) => {
-  review.addEventListener("click", (e) => {
-    console.log(review.dataset.name);
   });
 });
