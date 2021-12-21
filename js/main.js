@@ -32,7 +32,7 @@ const circles = document.querySelectorAll(".circles span");
 const reviews = document.querySelectorAll(".review");
 
 circles.forEach((circle) => {
-  circle.addEventListener("touchstart", (e) => {
+  circle.addEventListener("click", (e) => {
     reviews.forEach((review) => {
       review.classList.remove("active");
     });
@@ -42,4 +42,27 @@ circles.forEach((circle) => {
       }
     });
   });
+});
+
+reviews.forEach((review) => {
+  review.addEventListener("click", (e) => {
+    console.log(review.dataset.name);
+  });
+});
+
+// Navbar menu
+
+const burgerIcon = document.querySelector(".burger-menu");
+const mobileContainer = document.querySelector(".mobile_menu_container");
+
+burgerIcon.addEventListener("click", () => {
+  burgerIcon.classList.toggle("active");
+  mobileContainer.classList.toggle("active");
+});
+
+document.body.addEventListener("click", (e) => {
+  if (e.target.classList.contains("mobile_menu_container")) {
+    mobileContainer.classList.remove("active");
+    burgerIcon.classList.remove("active");
+  }
 });
