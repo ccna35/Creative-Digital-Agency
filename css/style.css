@@ -436,6 +436,13 @@ footer {
   background: #1d1e25;
   color: white;
 }
+footer li {
+  transition: color 0.5s;
+  cursor: pointer;
+}
+footer li:hover {
+  color: #f25f3a;
+}
 @media (min-width: 992px) {
   footer {
     padding: 3rem 0;

@@ -5,6 +5,13 @@
 footer {
   background: v.$VeryDarkBlue;
   color: white;
+  li {
+    @include transition(color 0.5s);
+    cursor: pointer;
+    &:hover {
+      color: v.$BrightRed;
+    }
+  }
   @include lg {
     padding: 3rem 0;
   }

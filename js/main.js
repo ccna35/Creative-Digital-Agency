@@ -66,3 +66,12 @@ document.body.addEventListener("click", (e) => {
     burgerIcon.classList.remove("active");
   }
 });
+
+// Form validation
+
+const inputField = document.querySelector("form input[type='email']");
+const submitButton = document.querySelector("form input[type='submit']");
+
+submitButton.addEventListener("click", (e) => {
+  e.preventDefault();
+});
